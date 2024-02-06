@@ -70,7 +70,7 @@ Module.register("newsfeed", {
 
 	// Define start sequence.
 	start: function () {
-		Log.info("Starting module: " + this.name);
+		Log.log("Starting module: " + this.name);
 
 		// Set locale.
 		moment.locale(config.language);
@@ -88,6 +88,7 @@ Module.register("newsfeed", {
 
 	// Override socket notification handler.
 	socketNotificationReceived: function (notification, payload) {
+		Log.log("News notification: " + notification);
 		if (notification === "NEWS_ITEMS") {
 			this.generateFeed(payload);
 
@@ -118,6 +119,7 @@ Module.register("newsfeed", {
 
 	//Override template data and return whats used for the current template
 	getTemplateData: function () {
+		Log.log("get templeate data hit");
 		// this.config.showFullArticle is a run-time configuration, triggered by optional notifications
 		if (this.config.showFullArticle) {
 			return {
@@ -169,6 +171,7 @@ Module.register("newsfeed", {
 	 * Registers the feeds to be used by the backend.
 	 */
 	registerFeeds: function () {
+		Log.log("register feeds news hit");
 		for (let feed of this.config.feeds) {
 			this.sendSocketNotification("ADD_FEED", {
 				feed: feed,
@@ -337,6 +340,7 @@ Module.register("newsfeed", {
 	},
 
 	notificationReceived: function (notification, payload, sender) {
+		Log.log("News notification: " + notification);
 		const before = this.activeItem;
 		if (notification === "MODULE_DOM_CREATED" && this.config.hideLoading) {
 			this.hide();

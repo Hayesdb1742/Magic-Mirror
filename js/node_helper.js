@@ -90,7 +90,7 @@ const NodeHelper = Class.extend({
 	setSocketIO(io) {
 		this.io = io;
 
-		Log.log(`Connecting socket for: ${this.name}`);
+		Log.log(`Connecting socket for: ${this.name} and io is ${this.io}`);
 
 		io.of(this.name).on("connection", (socket) => {
 			// add a catch all event.

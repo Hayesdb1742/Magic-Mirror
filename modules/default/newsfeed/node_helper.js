@@ -18,6 +18,7 @@ module.exports = NodeHelper.create({
 
 	// Override socketNotificationReceived received.
 	socketNotificationReceived: function (notification, payload) {
+		Log.log("news feed: " + notification);
 		if (notification === "ADD_FEED") {
 			this.createFetcher(payload.feed, payload.config);
 		}
