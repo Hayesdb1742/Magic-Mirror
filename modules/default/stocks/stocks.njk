@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ config.title }}</title>
+    <!-- Include any necessary stylesheets -->
+    <link rel="stylesheet" href="font-awesome.css">
+    <link rel="stylesheet" href="stock-icons.css">
+    <link rel="stylesheet" href="stocks.css">
+</head>
+<body>
+    <div class="stock-widget">
+        <h2>{{ config.title }}</h2>
+        <p>Current Stock: {{ config.currentStockObject.title }}</p>
+        <!-- You can add more HTML elements to display additional stock information if needed -->
+    </div>
+    <!-- Include any necessary JavaScript files -->
+    <script src="moment.js"></script>
+    <script src="utils.js"></script>
+    <script src="stocksutils.js"></script>
+    <script src="stockprovider.js"></script>
+    <script src="stocksobject.js"></script>
+    <script src="providers/{{ config.stockProvider.toLowerCase() }}.js"></script>
+</body>
+</html>

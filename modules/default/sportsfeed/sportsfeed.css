@@ -1,0 +1,23 @@
+iframe.sportsfeed-fullarticle {
+  width: 100vw;
+  /* very large height value to allow scrolling */
+  height: 3000px;
+  top: 0;
+  left: 0;
+  border: none;
+  z-index: 1;
+}
+
+.region.top.bar.sportsfeed-fullarticle {
+  bottom: inherit;
+  top: -90px;
+}
+
+.sportsfeed-list {
+  list-style: none;
+}
+
+.sportsfeed-list li {
+  text-align: justify;
+  margin-bottom: 0.5em;
+}
